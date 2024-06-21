@@ -1,0 +1,33 @@
+/* Ensure that only the .printable-content is shown when printing */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  
+  .printable-content, .printable-content * {
+    visibility: visible;
+  }
+  
+  .printable-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  /* Optional: Adjust layout for better print view */
+  .printable-content .row, .printable-content .col, .printable-content .table {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .printable-content h1, .printable-content h5, .printable-content h6 {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .printable-content p, .printable-content .table {
+    margin-bottom: 0.5rem;
+  }
+}
